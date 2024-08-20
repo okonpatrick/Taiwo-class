@@ -1,0 +1,73 @@
+import image1 from "../../assets/image/4447.jpg"
+
+export const productsData = [{
+  id: 0,
+  name: 'Modern UI displaying nature',
+  description: 'A stunning example of modern UI design that emphasizes nature-friendly navigation and clean environment.',
+  price: "200",
+  rating: "5",
+  imageId: image1,
+}, {
+  id: 1,
+  name: 'Creative Arts District',
+  description: 'Renowned for its vibrant street art and innovative design, this district is a hub for creatives.',
+  price: "300",
+  rating: "4.8",
+  imageId: image1,
+}, {
+  id: 2,
+  name: 'Art Deco Delight',
+  description: 'Famous for its Art Deco architecture, this place showcases beautiful and unique designs that stand out.',
+  price: "250",
+  rating: "4.7",
+  imageId: image1,
+}, {
+  id: 3,
+  name: 'Minimalist Marvel',
+  description: 'A perfect blend of minimalism and functionality, this design is a masterpiece of less is more.',
+  price: "180",
+  rating: "4.9",
+  imageId: image1,
+}, {
+  id: 4,
+  name: 'Bohemian Rhapsody',
+  description: 'Bohemian style brings a mix of eclectic designs and colorful art, making it a visual treat.',
+  price: "220",
+  rating: "4.6",
+  imageId: image1,
+}, {
+  id: 5,
+  name: 'Classical Art Space',
+  description: 'Home to classical art and architecture that remain timeless in their beauty and influence.',
+  price: "280",
+  rating: "5",
+  imageId: image1,
+}, {
+  id: 6,
+  name: 'Contemporary Art Hub',
+  description: 'A vibrant and dynamic contemporary art scene reflecting modern trends and creative expression.',
+  price: "260",
+  rating: "4.5",
+  imageId: image1,
+}, {
+  id: 7,
+  name: 'Urban Jungle',
+  description: 'A seamless integration of urban and natural elements, creating a unique and refreshing environment.',
+  price: "240",
+  rating: "4.7",
+  imageId: image1,
+}, {
+  id: 8,
+  name: 'Retro Revival',
+  description: 'Retro designs that bring a nostalgic yet modern feel, blending past and present effortlessly.',
+  price: "230",
+  rating: "4.8",
+  imageId: image1,
+}, {
+  id: 9,
+  name: 'Futuristic Vision',
+  description: 'Cutting-edge designs that give a glimpse into the future, blending technology and art beautifully.',
+  price: "300",
+  rating: "5",
+  imageId: image1,
+}];
