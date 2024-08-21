@@ -4,13 +4,16 @@ import { AxiosComponent } from "./components/Api/AxiosMethod";
 import { TailwindClass } from "./components/TaiwoClass/firstClass";
 import { NavBar } from "./components/TaiwoClass/Navbar";
 import { SignUp } from "./components/Forms/Signup";
-
 //new router shipped to v6.4 of react-router-dom
 //here we create the router outside any React component 
+
+
 const router = createBrowserRouter([
+  //notice the difference in the home route. keeping /api out of the children object makes it an independent route.
   {
-    path: '/',
-    element: <><NavBar />
+    path: '/home',
+    element: <>
+    <NavBar />
     <TailwindClass />
     </>,
     children: [
@@ -23,20 +26,31 @@ const router = createBrowserRouter([
         element: <SignUp/>,
       },
       {
-        path: 'api',
+        path: 'api/:id',
         element: <AxiosComponent/>
       }
+      
     ]
+  }, {
+    path: 'api',
+    element: <AxiosComponent/>
+  },
+  {
+    path: 'api/:id',
+    element: <AxiosComponent/>
   }
+ 
 ]);
 
 export default function App() {
+  
   return (
     <div>
       <RouterProvider router={router} />;
     </div>
   );
 }
+
 
 //older method of defining route. still in use though
 
@@ -56,48 +70,3 @@ export default function App() {
 //   )
 // }
 // export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
