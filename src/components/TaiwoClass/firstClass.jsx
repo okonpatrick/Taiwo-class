@@ -1,13 +1,15 @@
 import ClientImg from "../../assets/image/client.jpg";
-import {Link} from "react-router-dom"
-export const TailwindClass = () => {
+import {Link} from "react-router-dom";
+import { themeContext } from "../manageTheme";
+import { useContext } from "react";
 
+export const TailwindClass = () => {
+    const {themeState} = useContext(themeContext)
     return (
         <>
-            <div className="lg:flex align-center justify-center p-2">
+            <div className={`${ themeState === "light" ? "bg-white mx-auto lg:flex justify-center p-2" : "bg-black text-white mx-auto lg:flex justify-center p-2"}`}>
                 <div className="lg:mt-40 lg:pr-16">    
                     <div className="">
-                       
                         <h1 className="text-6xl font-bold">Design nice interfaces <br/>on the go with Tailwind</h1>
                         <h3 className="text-3xl">using utility first class stylings!</h3>
                     </div>
@@ -24,6 +26,3 @@ export const TailwindClass = () => {
         
     )
 }
-<script>
-    
-</script>

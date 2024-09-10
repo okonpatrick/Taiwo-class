@@ -6,17 +6,17 @@ import { NavBar } from "./components/TaiwoClass/Navbar";
 import { SignUp } from "./components/Forms/Signup";
 import UseReducerClass from './components/useReducerHook/useReducerBasic';
 import FuncComp from './components/useReducerHook/useReducer';
-
+import { ThemeComponent } from './components/manageTheme';
 //new router shipped to v6.4 of react-router-dom
 //here we create the router outside any React component 
 
 const router = createBrowserRouter([
   //notice the difference in the home route. keeping /api out of the children object makes it an independent route.
   {
-    path: '/home',
+    path: '/',
     element: <>
-    <NavBar />
-    <TailwindClass />
+      <NavBar />
+      <TailwindClass />
     </>,
     children: [
       {
@@ -27,43 +27,81 @@ const router = createBrowserRouter([
   },
   {
     path: 'signup',
-    element: <>    
-    <NavBar/>
-    <SignUp/>
-</>
-  }, 
+    element: <>
+      <NavBar />
+      <SignUp />
+    </>
+  },
   {
     path: 'product/:id',
-    element:  <AxiosComponent/>
-
-  },  
+    element: <AxiosComponent />
+  },
   {
     path: 'product',
-    element:  <AxiosComponent/>
+    element: <AxiosComponent />
 
-  },  
+  },
   {
     path: 'cart',
-    element:  <UseReducerClass/>
+    element: <UseReducerClass />
 
-  },  
+  },
   {
     path: 'cart/checkout',
-    element:  <FuncComp/>
+    element: <FuncComp />
 
-  },  
-  
-  
+  },
+
+
 ]);
 
 export default function App() {
-  
+
   return (
-    <div>
+    <ThemeComponent>
+      <div>
       <RouterProvider router={router} />
     </div>
+    </ThemeComponent>
+    
   );
 }
+
+
+//Let's start the firebase as a new app.
+// App.js
+// import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+// import { AuthProvider, useAuth } from "./components/useContextClass/AuthContext";
+// import SignUp from './components/useContextClass/signup';
+// import SignIn from './components/useContextClass/signin';
+// import Profile from './components/useContextClass/userprofile';
+
+// const ProtectedRoute = ({ children }) => {
+//   const { user, loading } = useAuth();
+
+//   if (loading) return <p>Loading...</p>;
+//   if (!user) return <Navigate to="/login" />;
+
+//   return children;
+// };
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <AuthProvider>
+//         <Routes>
+//           <Route path="/signup" element={<SignUp />} />
+//           <Route path="/login" element={<SignIn />} />
+//           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+//         </Routes>
+//       </AuthProvider>
+//     </Router>
+//   );
+// };
+
+// export default App;
+
+
 
 
 //older method of defining route. still in use though
