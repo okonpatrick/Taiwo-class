@@ -75,6 +75,9 @@ import { AuthProvider, useAuth } from "./components/useContextClass/AuthContext"
 import SignUp from './components/useContextClass/signup';
 import SignIn from './components/useContextClass/signin';
 import Profile from './components/useContextClass/userprofile';
+//import FetchData from "./components/custom-hooks/usualFetch";
+import {UsualAxiosFetch} from './components/custom-hooks/usualFetch';
+import { CallHookComp } from './components/custom-hooks/callHook';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -92,6 +95,9 @@ const App = () => {
         <Routes>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<SignIn />} />
+
+          <Route path="/fetch" element={<CallHookComp />} />
+
           <Route path="/profile" element={
             <ProtectedRoute>
               <Profile />

@@ -2,11 +2,18 @@ import ClientImg from "../../assets/image/client.jpg";
 import {Link} from "react-router-dom";
 import { themeContext } from "../manageTheme";
 import { useContext } from "react";
+import usualAxiosFetch from "../custom-hooks/customFetch";
 
 export const TailwindClass = () => {
     const {themeState} = useContext(themeContext)
+
+    const {data} = usualAxiosFetch("https://fakestoreapi.com/products");
+
     return (
         <>
+        {data.map(( items) => {
+            
+        })}
             <div className={`${ themeState === "light" ? "bg-white mx-auto lg:flex justify-center p-2" : "bg-black text-white mx-auto lg:flex justify-center p-2"}`}>
                 <div className="lg:mt-40 lg:pr-16">    
                     <div className="">
